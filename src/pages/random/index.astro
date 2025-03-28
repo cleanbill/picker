@@ -1,13 +1,14 @@
 ---
-import CrudTable from '../components/crudTable';
-import Layout from '../layouts/Layout.astro';
+import Random from "../../components/random";
+import Layout from "../../layouts/Layout.astro";
+
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<div class="text-red-500 bold text-9xl text-center"><a href='random'>Picker</a></div>
+	<div class="text-red-500 bold text-9xl text-center"><a href="../">Picker</a></div>
 
-	<CrudTable client:load ></CrudTable>
+	<Random client:load ></Random>
 </Layout>
