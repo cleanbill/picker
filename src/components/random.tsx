@@ -17,7 +17,7 @@ const CrudTable = () => {
     return (
         <>
 
-            (<div onClick={() => picked()} className={"border rounded-4xl bg-amber-400 p-3 text-center m-5"}>
+            (<div onClick={() => picked()} className={"border rounded-4xl bg-amber-400 p-3 text-center m-5 w-fit"}>
                 <div className="grid grid-cols-[0fr_3fr] gap-3" >
                     <div className="text-7xl pt-3 text-left">Name:</div>
                     <input disabled={true} className="text-7xl w-200 pb-2 text-amber-700 rounded-2xl p-1" defaultValue={chore.name}></input>

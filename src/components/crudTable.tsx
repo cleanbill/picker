@@ -43,25 +43,27 @@ const CrudTable = () => {
     }
 
     return (
-        <>
+        <div className="w-fit">
 
             {chores.map((chore: Chore, index: number) =>
-            (<div onClick={() => setChoreIndexEdit(index)} className={choreIndexEdit == index ? "border-4 rounded-4xl bg-amber-100 p-3 text-center m-5" : "border rounded-4xl bg-amber-400 p-3 text-center m-5"}>
+            (<div onClick={() => setChoreIndexEdit(index)} className={choreIndexEdit == index
+                ? "border-4 rounded-4xl bg-amber-100 p-3 text-center m-5 w-fit"
+                : "border   rounded-4xl bg-amber-400 p-3 text-center m-5 w-fit "}>
                 <div className="grid grid-cols-[0fr_3fr] gap-3" key={chore.id}>
-                    <div className="text-3xl pt-1 text-left">Name:</div>
-                    <input autoFocus={choreIndexEdit == index} onChange={(i: React.ChangeEvent<HTMLInputElement>) => changedName(i, index)} className="text-3xl w-240 pb-2 text-amber-700 rounded-2xl p-1 pl-3" defaultValue={chore.name}></input>
+                    <div className="text-3xl pt-10 text-left">Name:</div>
+                    <input autoFocus={choreIndexEdit == index} onChange={(i: React.ChangeEvent<HTMLInputElement>) => changedName(i, index)} className="text-7xl w-240 pb-2 text-amber-700 rounded-2xl p-1 pl-3" defaultValue={chore.name}></input>
                 </div >
                 <div className="grid grid-cols-[0fr_1fr_0fr_1fr_1fr] gap-2" key={chore.id}>
-                    <div className="text-3xl pt-1 text-left">Time:</div>
-                    <input disabled={choreIndexEdit != index} onChange={(i: React.ChangeEvent<HTMLInputElement>) => changedTime(i, index)} className="text-3xl w-50 text-amber-700 rounded-2xl p-1 pl-3" defaultValue={chore.time}></input>
-                    <div className="text-3xl pt-1 text-left">Cost:</div>
-                    <input disabled={choreIndexEdit != index} onChange={(i: React.ChangeEvent<HTMLInputElement>) => changedCost(i, index)} className="text-3xl w-50 text-amber-700 rounded-2xl p-1 pl-3" defaultValue={chore.cost}></input>
-                    <button onClick={() => remove(chore)} className="border-2 ml-64 text-2xl w-10 rounded-4xl hover:bg-amber-300 bg-amber-400 text-center m-1">-</button>
+                    <div className="text-3xl pt-10 text-left">Time:</div>
+                    <input disabled={choreIndexEdit != index} onChange={(i: React.ChangeEvent<HTMLInputElement>) => changedTime(i, index)} className="text-7xl w-50 text-amber-700 rounded-2xl p-1 pl-3" defaultValue={chore.time}></input>
+                    <div className="text-3xl pt-10 text-left">Cost:</div>
+                    <input disabled={choreIndexEdit != index} onChange={(i: React.ChangeEvent<HTMLInputElement>) => changedCost(i, index)} className="text-7xl w-50 text-amber-700 rounded-2xl p-1 pl-3" defaultValue={chore.cost}></input>
+                    <button onClick={() => remove(chore)} className="border-2 ml-64 text-7xl w-20 rounded-4xl hover:bg-amber-300 bg-amber-100 text-center m-1 ">-</button>
                 </div >
             </div >)
             )}
-            <button onClick={add} className="border-2 hover:bg-amber-300 text-5xl w-20 float-end rounded-4xl bg-amber-400 p-3 text-center m-5">+</button>
-        </>)
+            <button onClick={add} className="border-2 float-end mr-10 hover:bg-amber-300 text-5xl w-20 rounded-4xl bg-amber-400 p-3 text-center m-5">+</button>
+        </div>)
 }
 
 
